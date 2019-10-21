@@ -11,7 +11,7 @@ weatherForm.addEventListener('submit', (e) => {
     messageOne.textContent = 'Loading...'
     messageTwo.textContent = ''
 
-    fetch(`http://localhost:3000/weather?address=${location}`).then((response) => {//fetch works in all browsers but not node.js on server side.
+    fetch(`/weather?address=${location}`).then((response) => {//fetch works in all browsers but not node.js on server side.
         response.json()//.then cbfunc to run later when get data b/c this func is async.
             .then((data) => {
                 if (data.error) {
